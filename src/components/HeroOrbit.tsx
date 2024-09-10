@@ -55,6 +55,9 @@ const HeroOrbit = () => {
       <StarOrbit size={570} rotation={-35}>
         <div className="size-3 rounded-full bg-emerald-300/20"></div>
       </StarOrbit>
+      <StarOrbit size={570} rotation={-35}>
+        <div className="size-3 rounded-full bg-emerald-300/20"></div>
+      </StarOrbit>
     </>
   );
 };
