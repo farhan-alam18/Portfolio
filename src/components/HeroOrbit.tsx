@@ -1,4 +1,3 @@
-import React from "react";
 import { StarOrbit } from "./StarOrbit";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
@@ -15,7 +14,6 @@ const HeroOrbit = () => {
     { size: 715, rotation: 37, smallSize: 8 },
     { size: 480, rotation: -101, smallSize: 7 },
     { size: 790, rotation: 92, smallSize: 5 },
-    
   ];
   return (
     <>
@@ -37,11 +35,12 @@ const HeroOrbit = () => {
 
       {/* Mapped Values  */}
       {randomValues.map((val, index) => (
-      <StarOrbit key={index} size={val.size} rotation={val.rotation}>
-        <SparkleIcon className={`size-${val.smallSize} text-emerald-300/20`} />
-      </StarOrbit>
-    ))}
-
+        <StarOrbit key={index} size={val.size} rotation={val.rotation}>
+          <SparkleIcon
+            className={`size-${val.smallSize} text-emerald-300/20`}
+          />
+        </StarOrbit>
+      ))}
 
       <StarOrbit size={530} rotation={178}>
         <SparkleIcon className="size-10 text-emerald-300/20" />

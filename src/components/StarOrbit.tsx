@@ -2,6 +2,7 @@ type Props = {
   children: React.ReactNode;
   size: number;
   rotation: number;
+  
 };
 
 export const StarOrbit = ({ children, size, rotation }: Props) => {
@@ -16,7 +17,7 @@ export const StarOrbit = ({ children, size, rotation }: Props) => {
         }}
       >
         <div
-          className="inline-flex animate-spin [animation-duration:18s]"
+          className="inline-flex animate-spin [animation-duration:12s]"
           style={{
             transform: `rotate(${rotation * -1}deg)`,
           }}
@@ -27,3 +28,4 @@ export const StarOrbit = ({ children, size, rotation }: Props) => {
     </div>
   );
 };
+
