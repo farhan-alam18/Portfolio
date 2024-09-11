@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import memojiImage from "@/assets/images/avatar-1-1.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
