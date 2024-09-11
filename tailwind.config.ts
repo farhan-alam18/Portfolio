@@ -27,6 +27,7 @@ const config: Config = {
       },
       animation: {
         "ping-large": "ping-large 1s ease-in-out infinite",
+        "tape-animation": "tape-animation 1s linear infinite"
       },
       keyframes: {
         "ping-large": {
@@ -34,6 +35,14 @@ const config: Config = {
             transform: "scale(3)",
             opacity: "0",
           },
+        },
+        "tape-animation": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%":{
+            transform:"translateX(-50%)"
+          }
         },
       },
     },
