@@ -7,6 +7,7 @@ import grainImage from "@/assets/images/grain.jpg";
 
 import Image from "next/image";
 import Link from "next/link";
+import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
@@ -64,17 +65,14 @@ export const ProjectsSection = () => {
           frameworks.
         </p>
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
-            <div
+          {portfolioProjects.map((project, projectIndex) => (
+            <Card
               key={project.title}
-              className="bg-gray-800 rounded-3xl relative z-0  overflow-hidden after:-z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 after:pointer-events-none lg:pt-16 lg:px-20"
+              className="px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{
+                top: `calc(64px + ${projectIndex * 20}px)`,
+              }}
             >
-              <div
-                className="absolute inset-0 -z-10 opacity-5"
-                style={{
-                  backgroundImage: `url(${grainImage.src})`,
-                }}
-              ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-sm md:text-xl text-transparent bg-clip-text">
@@ -99,13 +97,13 @@ export const ProjectsSection = () => {
                   <div className="mt-8 flex flex-col md:flex-row gap-4">
                     <Link href={project.link}>
                       <button className="bg-white/90 text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex justify-center items-center gap-2 transition-all hover:bg-white/80 md:p-5">
-                        <span>Visit Live Site</span>
+                        <span>View Live Site</span>
                         <ArrowUpRightIcon className="size-5" />
                       </button>
                     </Link>
                     <Link href={project.github}>
                       <button className="bg-green-700 text-white h-12 w-full rounded-xl font-semibold inline-flex justify-center items-center gap-2 transition-all hover:bg-green-700/80 md:p-5">
-                        <span>View Github</span>
+                        <span>Vsit Github</span>
                         <Image src={GithubIcon} alt="" className="size-7" />
                       </button>
                     </Link>
@@ -114,10 +112,10 @@ export const ProjectsSection = () => {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:ml-[320px] lg:w-auto lg:max-w-none"
+                  className="mt-8 -mb-[22px] md:-mb-5 lg:mt-0 lg:absolute lg:h-full lg:ml-[320px] lg:w-auto lg:max-w-none"
                 />
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
