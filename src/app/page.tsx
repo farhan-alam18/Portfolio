@@ -16,6 +16,7 @@ export default function Home() {
       <section id="projects">
         <ProjectsSection />
       </section>
+      <TapeSection />
       <section id="about">
         <AboutSection />
       </section>
