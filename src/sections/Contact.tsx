@@ -13,7 +13,7 @@ export const ContactSection = () => {
               backgroundImage: `url(${grainImage.src})`,
             }}
           ></div>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+          <div className="flex flex-col md:flex-row gap-5 md:gap-16 items-center">
             <div className="md:text-start">
               <h2 className="font-serif text-2xl md:text-3xl">
                 Let&apos;s team up for success
