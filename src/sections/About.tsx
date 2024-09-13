@@ -18,6 +18,7 @@ import GithubIcon from "@/assets/icons/github.svg";
 import mapImage from "@/assets/images/map-1.png";
 import avatarHead from "@/assets/images/avatar-2-2-head.png";
 import { useRef } from "react";
+import Link from "next/link";
 
 const toolboxItems = [
   {
@@ -136,7 +137,7 @@ export const AboutSection = () => {
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute cursor-grab"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
@@ -158,15 +159,17 @@ export const AboutSection = () => {
                 alt="Map"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-16 rounded-full  mt-3 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
-                <Image
-                  src={avatarHead}
-                  alt="Avatar Head"
-                  className="size-16 translate-y-1 -translate-x-1"
-                />
-              </div>
+              <Link href="https://www.google.com/maps/place/Kolkata,+West+Bengal/@22.5353434,88.1825449,11z/data=!3m1!4b1!4m6!3m5!1s0x39f882db4908f667:0x43e330e68f6c2cbc!8m2!3d22.5743545!4d88.3628734!16zL20vMGN2dzk?entry=ttu&g_ep=EgoyMDI0MDkxMC4wIKXMDSoASAFQAw%3D%3D">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-16 rounded-full  mt-3 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
+                  <Image
+                    src={avatarHead}
+                    alt="Avatar Head"
+                    className="size-16 translate-y-1 -translate-x-1"
+                  />
+                </div>
+              </Link>
             </Card>
           </div>
         </div>

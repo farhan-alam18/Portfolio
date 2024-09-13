@@ -1,22 +1,25 @@
+"use client"
+
 import Image from "next/image";
 import memojiImage from "@/assets/images/avatar-1-1.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import HeroOrbit from "@/components/HeroOrbit";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
     <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 z-[-10] [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
-          className="absolute inset-0 -z-30 opacity-5"
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `url(${grainImage.src})`,
           }}
         ></div>
 
         {/* Background Rings */}
-        <div className="size-[620px] hero-ring "></div>
+        <div className="size-[620px] hero-ring"></div>
         <div className="size-[820px] hero-ring"></div>
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
@@ -25,7 +28,7 @@ export const HeroSection = () => {
         <HeroOrbit />
       </div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex flex-col items-center">
           <Image
             src={memojiImage}
@@ -49,13 +52,23 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <button
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             <span className="font-semibold">Explore my Work</span>
             <ArrowDown className="size-4" />
           </button>
+
           <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold ">Let&apos;s connect</span>
+            <Link href="https://www.linkedin.com/in/farhan-alam-497b66323/">
+              <span>👋</span>
+              <span className="font-semibold ">Let&apos;s connect</span>
+            </Link>
           </button>
         </div>
       </div>
